@@ -1,0 +1,32 @@
+# cmd
+python -V # 파이썬 버전 확인
+
+cd \
+C:\> mkdir venvs # venvs라는 디렉터리 생성
+C:\> cd venvs # venvs 디렉터리로 들어가기
+
+C:\venvs> python -m venv mysite # venv라는 모듈을 사용, mysite라는 이름의 가상환경 생성
+
+cd C:\venvs\mysite\Scripts
+
+C:\venvs\mysite\Scripts> activate # 가상환경 진입하기
+
+(mysite) C:\venvs\mysite\Scripts> deactivate # 가상환경 벗어나기
+
+pip install django==4.0.3 # 장고 설치
+
+C:\> mkdir projects # 프로젝트를 모아 둘 루트 디렉터리 생성
+
+C:\projects>C:\venvs\mysite\Scripts\activate # mysite 가상환경에 진입
+
+(mysite) C:\projects>mkdir mysite # 파이보 프로젝트를 의미하는 mysite 디렉터리 생성
+(mysite) C:\projects>cd mysite # mysite 디렉터리로 이동
+
+(mysite) C:\projects\mysite>django-admin startproject config . # 장고 프로젝트 생성, .은 현재 디렉터리를 의미
+
+(mysite) C:\projects\mysite>python manage.py runserver # mysite 구동, (로컬 서버)
+
+[파일 이름: C:/venvs/mysite.cmd] # 가상환경 진입 배치 프로그램 
+@echo off
+cd c:/projects/mysite
+c:/venvs/mysite/scripts/activate

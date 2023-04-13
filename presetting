@@ -31,3 +31,4 @@ C:\projects>C:\venvs\mysite\Scripts\activate # mysite 가상환경에 진입
 cd c:/projects/mysite
 c:/venvs/mysite/scripts/activate
 
+(mysite) C:\projects\mysite> django-admin startapp pybo # 파이보 앱 

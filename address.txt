@@ -1,2 +1,5 @@
 https://wikidocs.net/book/4223
 https://github.com/pahkey/jump2django
+www.python.org
+www.jetbrains.com/ko-kr/pycharm/download/#section=windows
+https://sqlitebrowser.org/dl/

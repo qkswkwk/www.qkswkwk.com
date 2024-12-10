@@ -1,0 +1,71 @@
+class Matrix:
+    def __init__(self, row, col):
+        self.row = row
+        self.col = col
+        self.data = []
+        for i in range(self.row):
+            rowVec = []
+            for j in range(self.col):
+                rowVec.append(i * self.col + j + 1)
+            self.data.append(rowVec)
+            
+    def __str__(self):
+        return str(self.data)[1:-1].replace("], [", "]\n[")
+    
+    def getElement(self, row, col):
+        return self.data[row-1][col-1]
+    
+    def setElement(self, row, col, a):
+        self.data[row-1][col-1] = a
+        
+    def getTranspose(self):
+        new_mat = Matrix(self.col, self.row)
+        for i in range(self.row):
+            for j in range(self.col):
+                new_mat.data[j][i] = self.data[i][j]
+        return new_mat
+    
+    def doTranspose(self):
+        self.data = self.getTranspose().data
+        self.row, self.col = self.col, self.row
+        
+    def __mul__(self, other):
+        new_mat = Matrix(self.row, self.col)
+        for i in range(self.row):
+            for j in range(self.col):
+                new_mat.data[i][j] = self.data[i][j] * other
+        return new_mat
+
+    def __add__(self, other):
+        new_mat = Matrix(self.row, self.col)
+        for i in range(self.row):
+            for j in range(self.col):
+                new_mat.data[i][j] = self.data[i][j] + other.data[i][j]
+        return new_mat
+
+m1 = Matrix(2, 3)
+print("print(m1)")
+print(m1)
+print("print(m1.getElement(2, 2))")
+print(m1.getElement(2, 2))
+m1.setElement(2, 2, -10)
+print("print(m1)")
+print(m1)
+print("print(m1.getTranspose())")
+print(m1.getTranspose())
+print("print(m1)")
+print(m1)
+print("print(m1.doTranspose())")
+print(m1.doTranspose())
+print("print(m1)")
+print(m1)
+m2 = m1 * 3
+print("print(m2)")
+print(m2)
+m3 = m1 + m2
+print("print(m3)")
+print(m3)
+m4 = m2.getTranspose()
+m5 = m1 * m4
+print("print(m5)")
+print(m5)
